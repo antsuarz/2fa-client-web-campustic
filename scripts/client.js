@@ -22,9 +22,9 @@ loginForm.addEventListener('submit', function(event) {
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = 'admin.html'; 
+            window.location.href = '2fa.html'; 
         } else {
-            throw new Error('Login failed');
+            throw new Error('Incorrect User or Password');
         }
     })
     .then(data => {

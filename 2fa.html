@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Tic 2024: Log in</title>
+    <title>Campus Tic 2024: 2FA"</title>
     <link rel="stylesheet"  href='./style/login.css'>
 </head>
 <body>
@@ -12,17 +12,16 @@
     </header>
     <main>
         <section> 
+            <h2>You have 2FA enabled on this account.</h2>
+            <p>Please check your email:</p>
+            <p><b>a***********13@gmail.com</b></p> 
+            <p>And introduce the code to complete the login process.</p>
             <form id="loginForm">
-                <div>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+                <div> 
+                    <input type="text" id="code" name="code" required>
                 </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit">Log In</button>
-                <p id="errorMessage" style="color: red; display: none; text-align: center;"></p>
+                <button type="submit">Check Code</button>
+                <p id="errorMessage" style="color: red; display: none;">Login failed</p>
             </form>
         </section>
     </main>
