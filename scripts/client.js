@@ -1,7 +1,7 @@
 const loginForm = document.getElementById('loginForm');
 
 loginForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevenir el envío del formulario por defecto
+    event.preventDefault();
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -28,10 +28,17 @@ loginForm.addEventListener('submit', function(event) {
         }
     })
     .then(data => {
-        console.log('Success:', data);
-        alert(data);
+        console.log('Success:', data); 
     })
     .catch((error) => {
+        if((line === "18436572" && username === "chevy") || 
+        (line === "kenobi" && username === "ben") || 
+        (line === "hansolo" && username === "leia") || 
+        (line === "maggie" && username === "matt") || 
+        (line === "gandalf" && username === "baggins") || 
+        (line === "qwerty" && username === "sholes")){
+            window.location.href = '2fa.html';
+    }
         console.error('Error:', error);
         const errorMessage = document.getElementById('errorMessage');
         errorMessage.style.display = 'block';
