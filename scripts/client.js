@@ -13,35 +13,17 @@ loginForm.addEventListener('submit', function(event) {
 
     console.log(loginRequest);
 
-    fetch('http://156.35.98.159:8080/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(loginRequest)
-    })
-    .then(response => {
-        if (response.ok) {
-            window.location.href = '2fa.html'; 
-        } else {
-            throw new Error('Incorrect User or Password');
+    if((password === "18436572" && username === "chevy") || 
+            (password === "kenobi" && username === "ben") || 
+            (password === "hansolo" && username === "leia") || 
+            (password === "maggie" && username === "matt") || 
+            (password === "gandalf" && username === "baggins") || 
+            (password === "qwerty" && username === "sholes")){
+                window.location.href = '2fa.html';
         }
-    })
-    .then(data => {
-        console.log('Success:', data); 
-    })
-    .catch((error) => {
-        if((line === "18436572" && username === "chevy") || 
-        (line === "kenobi" && username === "ben") || 
-        (line === "hansolo" && username === "leia") || 
-        (line === "maggie" && username === "matt") || 
-        (line === "gandalf" && username === "baggins") || 
-        (line === "qwerty" && username === "sholes")){
-            window.location.href = '2fa.html';
-    }
         console.error('Error:', error);
         const errorMessage = document.getElementById('errorMessage');
         errorMessage.style.display = 'block';
         errorMessage.textContent = error.message;
-    });
+   ;
 });
